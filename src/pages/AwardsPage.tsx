@@ -34,7 +34,7 @@ export function AwardsPage() {
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           {FILTERS.map((f) => (
             <button key={f.key} onClick={() => setFilter(f.key)}
-              className={`chip transition-all duration-200 ${filter === f.key ? 'border-lilac bg-lilac/15 text-lilac-300' : 'border-white/10 text-cream/60 hover:border-white/25 hover:text-white'}`}>
+              className={`chip transition-all duration-200 ${filter === f.key ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/60 hover:text-white'}`}>
               {f.label}
             </button>
           ))}
@@ -55,7 +55,7 @@ export function AwardsPage() {
                     return (
                       <article key={a.id} className="card-glass group relative overflow-hidden p-6">
                         <div className="flex items-start justify-between">
-                          <span className="grid h-12 w-12 place-items-center rounded-xl border border-lilac/30 bg-lilac/10"><Trophy className="h-6 w-6 text-lilac-300" /></span>
+                          <span className="grid h-12 w-12 place-items-center rounded-xl bg-lilac"><Trophy className="h-6 w-6 text-white" /></span>
                           <span className={`chip ${meta.color}`}>{meta.label}</span>
                         </div>
                         <h3 className="mt-4 font-display text-lg font-semibold text-white">{a.title}</h3>

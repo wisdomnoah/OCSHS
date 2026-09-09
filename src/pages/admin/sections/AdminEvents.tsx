@@ -42,7 +42,7 @@ export function AdminEvents() {
                 {e.description && <p className="mt-1 line-clamp-2 text-sm text-cream/60">{e.description}</p>}
               </div>
               <div className="flex shrink-0 gap-1.5">
-                <button onClick={() => togglePublish(e)} className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-cream/70 transition hover:border-emerald/50 hover:text-emerald">
+                <button onClick={() => togglePublish(e)} className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs font-medium text-cream transition hover:bg-emerald hover:text-emerald">
                   {e.status === 'published' ? 'Unpublish' : 'Publish'}
                 </button>
                 <RowActions onEdit={() => c.setEditing(e)} onDelete={() => c.remove(e.id, 'event')} />

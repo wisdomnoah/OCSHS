@@ -28,8 +28,8 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-lg border border-lilac/40 bg-lilac/10">
-                <GraduationCap className="h-5 w-5 text-lilac-300" />
+              <span className="grid h-9 w-9 place-items-center rounded-lg bg-lilac">
+                <GraduationCap className="h-5 w-5 text-white" />
               </span>
               <span className="font-display text-base font-semibold text-white">{schoolName}</span>
             </div>

@@ -56,7 +56,7 @@ export function AdminAnnouncements() {
                 <span className="mt-1 inline-block text-xs text-cream/40">{new Date(a.created_at).toLocaleDateString()}</span>
               </div>
               <div className="flex shrink-0 gap-1.5">
-                <button onClick={() => togglePublish(a)} className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-cream/70 transition hover:border-emerald/50 hover:text-emerald">
+                <button onClick={() => togglePublish(a)} className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs font-medium text-cream transition hover:bg-emerald hover:text-emerald">
                   {a.status === 'published' ? 'Unpublish' : 'Publish'}
                 </button>
                 <RowActions onEdit={() => c.setEditing(a)} onDelete={() => c.remove(a.id, 'announcement')} />

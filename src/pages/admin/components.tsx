@@ -75,8 +75,8 @@ export function RowActions({ onEdit, onDelete, small }: { onEdit: () => void; on
   const s = small ? 'h-8 w-8' : 'h-9 w-9';
   return (
     <div className="flex shrink-0 gap-1.5">
-      <button onClick={onEdit} className={`grid place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-lilac/50 hover:text-lilac-300 ${s}`}><Pencil className="h-3.5 w-3.5" /></button>
-      <button onClick={onDelete} className={`grid place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-red-400/50 hover:text-red-300 ${s}`}><Trash2 className="h-3.5 w-3.5" /></button>
+      <button onClick={onEdit} className={`grid place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-lilac hover:text-white ${s}`}><Pencil className="h-3.5 w-3.5" /></button>
+      <button onClick={onDelete} className={`grid place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-red-500 hover:text-white ${s}`}><Trash2 className="h-3.5 w-3.5" /></button>
     </div>
   );
 }
@@ -87,14 +87,14 @@ export function FormShell({ title, onClose, onSave, busy, error, saveLabel, chil
 }) {
   return (
     <Modal open onClose={onClose} maxWidth="max-w-lg">
-      <div className="rounded-2xl border border-white/10 bg-ink-900 p-6">
+      <div className="rounded-2xl bg-surface p-6">
         <div className="mb-5 flex items-center justify-between">
           <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
-          <button onClick={onClose} className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-cream/60 hover:text-white"><X className="h-4 w-4" /></button>
+          <button onClick={onClose} className="grid h-8 w-8 place-items-center rounded-lg bg-surface-2 text-cream/60 hover:text-white hover:bg-lilac"><X className="h-4 w-4" /></button>
         </div>
         <div className="space-y-4">
           {children}
-          {error && <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">{error}</div>}
+          {error && <div className="rounded-xl bg-red-500 px-4 py-3 text-sm text-white">{error}</div>}
           <div className="flex flex-wrap justify-end gap-2 pt-2">
             {extraActions}
             <button onClick={onClose} className="btn-ghost">Cancel</button>
@@ -129,7 +129,7 @@ export function SearchBar({ value, onChange, placeholder }: { value: string; onC
 export function StatusBadge({ status }: { status: 'draft' | 'published' }) {
   const isPub = status === 'published';
   return (
-    <span className={`chip ${isPub ? 'text-emerald-300 border-emerald/40 bg-emerald/10' : 'text-amber-300 border-amber-500/40 bg-amber-500/10'}`}>
+    <span className={`chip ${isPub ? 'bg-emerald text-emerald' : 'bg-amber-500 text-amber-950'}`}>
       {isPub ? 'Published' : 'Draft'}
     </span>
   );
@@ -137,7 +137,7 @@ export function StatusBadge({ status }: { status: 'draft' | 'published' }) {
 
 export function Toast({ message, type }: { message: string; type: 'success' | 'error' }) {
   return (
-    <div className={`fixed bottom-6 right-6 z-[200] rounded-xl border px-5 py-3 text-sm font-medium animate-fadeUp ${type === 'success' ? 'border-emerald/40 bg-emerald/10 text-emerald' : 'border-red-500/40 bg-red-500/10 text-red-300'}`}>
+    <div className={`fixed bottom-6 right-6 z-[200] rounded-xl px-5 py-3 text-sm font-medium animate-fadeUp ${type === 'success' ? 'bg-emerald text-emerald' : 'bg-red-500 text-white'}`}>
       {message}
     </div>
   );

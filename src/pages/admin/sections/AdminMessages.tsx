@@ -55,13 +55,13 @@ export function AdminMessages() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
                     <h3 className="font-medium text-white">{m.name}</h3>
-                    <span className="chip text-cream/60 border-white/20 bg-white/5">{m.subject}</span>
+                    <span className="chip bg-surface-2 text-cream">{m.subject}</span>
                   </div>
                   <a href={`mailto:${m.email}`} className="text-xs text-lilac-300 hover:underline">{m.email}</a>
                   <p className="mt-2 text-sm text-cream/70">{m.message}</p>
                   <p className="mt-1 text-xs text-cream/40">{new Date(m.created_at).toLocaleString()}</p>
                 </div>
-                <button onClick={() => handleDelete(m.id)} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-red-400/50 hover:text-red-300">
+                <button onClick={() => handleDelete(m.id)} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-red-500 hover:text-white">
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>
               </div>

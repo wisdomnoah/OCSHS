@@ -28,7 +28,7 @@ export function Modal({ open, onClose, children, maxWidth = 'max-w-2xl' }: Modal
       <div className={`relative w-full ${maxWidth} animate-fadeUp`} onClick={(e) => e.stopPropagation()}>
         {children}
         <button onClick={onClose} aria-label="Close"
-          className="absolute -top-3 -right-3 grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-ink-900 text-cream transition hover:border-lilac/50 hover:text-lilac-300">
+          className="absolute -top-3 -right-3 grid h-9 w-9 place-items-center rounded-full bg-surface-2 text-cream transition hover:bg-lilac hover:text-white">
           <X className="h-4 w-4" />
         </button>
       </div>

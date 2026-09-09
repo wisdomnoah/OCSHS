@@ -40,7 +40,7 @@ export function ContactPage() {
         <div className="grid gap-4 sm:grid-cols-3">
           {contacts.map((c) => (
             <div key={c.label} className="card-glass flex items-center gap-4 p-5">
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-lilac/30 bg-lilac/10"><c.icon className="h-5 w-5 text-lilac-300" /></span>
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-lilac"><c.icon className="h-5 w-5 text-white" /></span>
               <div><p className="text-xs uppercase tracking-wider text-cream/40">{c.label}</p><p className="text-sm font-medium text-white">{c.value}</p></div>
             </div>
           ))}
@@ -65,10 +65,10 @@ export function ContactPage() {
               </div>
               <div><label className="label">Message</label><textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="input resize-none" placeholder="How can we help?" /></div>
               {status === 'sent' && (
-                <div className="flex items-center gap-2 rounded-xl border border-emerald/30 bg-emerald/10 px-4 py-3 text-sm text-emerald"><CheckCircle2 className="h-4 w-4" /> Message received — thank you!</div>
+                <div className="flex items-center gap-2 rounded-xl bg-emerald px-4 py-3 text-sm text-emerald"><CheckCircle2 className="h-4 w-4" /> Message received — thank you!</div>
               )}
               {status === 'error' && (
-                <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">{errorMsg || 'Something went wrong. Please try again.'}</div>
+                <div className="rounded-xl bg-red-500 px-4 py-3 text-sm text-white">{errorMsg || 'Something went wrong. Please try again.'}</div>
               )}
               <button type="submit" disabled={status === 'sending'} className="btn-primary"><Send className="h-4 w-4" />{status === 'sending' ? 'Sending…' : 'Send message'}</button>
             </form>

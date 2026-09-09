@@ -20,7 +20,7 @@ function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-cream transition hover:border-lilac/50 hover:text-lilac-300"
+      className="grid h-9 w-9 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-lilac hover:text-white"
     >
       {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </button>
@@ -47,8 +47,8 @@ export function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'glass border-b' : 'border-b border-transparent bg-transparent'}`}>
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <button onClick={() => go('/')} className="group flex items-center gap-2.5" aria-label="OCSHS home">
-          <span className="grid h-9 w-9 place-items-center rounded-lg border border-lilac/40 bg-lilac/10">
-            <GraduationCap className="h-5 w-5 text-lilac-300" />
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-lilac">
+            <GraduationCap className="h-5 w-5 text-white" />
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-sm font-semibold tracking-tight text-white">OCSHS</span>
@@ -70,7 +70,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
-          <button className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-cream" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+          <button className="grid h-10 w-10 place-items-center rounded-lg bg-surface-2 text-cream" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -81,7 +81,7 @@ export function Navbar() {
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
             {LINKS.map((l) => (
               <button key={l.path} onClick={() => go(l.path)}
-                className={`rounded-lg px-4 py-3 text-left text-sm font-medium transition ${path === l.path ? 'bg-lilac/10 text-lilac-300' : 'text-cream/80 hover:bg-white/5'}`}>
+                className={`rounded-lg px-4 py-3 text-left text-sm font-medium transition ${path === l.path ? 'bg-lilac text-white' : 'text-cream/80 hover:bg-surface-2'}`}>
                 {l.label}
               </button>
             ))}

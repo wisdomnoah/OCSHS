@@ -84,7 +84,7 @@ export function AdminUsers({ isSuperAdmin }: { isSuperAdmin: boolean }) {
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="truncate text-sm font-medium text-white">{u.email}</p>
                   <span className={`chip ${ROLE_META[u.role].color}`}>{ROLE_META[u.role].label}</span>
-                  {u.disabled && <span className="chip text-red-300 border-red-500/40 bg-red-500/10">Disabled</span>}
+                  {u.disabled && <span className="chip bg-red-500 text-white">Disabled</span>}
                 </div>
                 <p className="text-xs text-cream/40">{u.full_name ?? 'No name'} · Joined {new Date(u.created_at).toLocaleDateString()}</p>
               </div>
@@ -92,21 +92,21 @@ export function AdminUsers({ isSuperAdmin }: { isSuperAdmin: boolean }) {
                 {u.role !== 'super_admin' && (
                   <button
                     onClick={() => setRole(u, u.role === 'super_admin' ? 'content_editor' : 'super_admin')}
-                    className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-cream/70 transition hover:border-lilac/50 hover:text-lilac-300"
+                    className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs font-medium text-cream transition hover:bg-lilac hover:text-white"
                   >
                     {u.role === 'super_admin' ? 'Make Editor' : 'Make Admin'}
                   </button>
                 )}
                 <button
                   onClick={() => toggleDisable(u)}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-amber-500/50 hover:text-amber-300"
+                  className="grid h-9 w-9 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-amber-500 hover:text-amber-950"
                   title={u.disabled ? 'Enable' : 'Disable'}
                 >
                   {u.disabled ? <CheckCircle2 className="h-4 w-4" /> : <Ban className="h-4 w-4" />}
                 </button>
                 <button
                   onClick={() => setEditUser(u)}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-lilac/50 hover:text-lilac-300"
+                  className="grid h-9 w-9 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-lilac hover:text-white"
                   title="Reset password"
                 >
                   <KeyRound className="h-4 w-4" />

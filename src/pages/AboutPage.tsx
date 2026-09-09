@@ -40,8 +40,8 @@ export function AboutPage() {
         <div className="grid gap-5 md:grid-cols-3">
           {PILLARS.map((p, i) => (
             <article key={p.title} className="card-glass p-7 animate-fadeUp" style={{ animationDelay: `${i * 80}ms` }}>
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-lilac/30 bg-lilac/10">
-                <p.icon className="h-5 w-5 text-lilac-300" />
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-lilac">
+                <p.icon className="h-5 w-5 text-white" />
               </span>
               <h3 className="mt-5 font-display text-xl font-semibold text-white">{p.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-cream/65">{p.text}</p>
@@ -67,9 +67,9 @@ export function AboutPage() {
                   const isActive = i === active;
                   return (
                     <button key={m.id} onClick={() => setActive(i)}
-                      className={`group relative flex w-full items-center gap-5 rounded-2xl p-3 text-left transition-all duration-200 ${isActive ? 'glass border-lilac/30' : 'hover:bg-white/5'}`}>
-                      <span className={`relative z-10 grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 transition-all duration-200 ${isActive ? 'border-lilac bg-lilac/20 text-lilac-300' : 'border-white/15 bg-ink-900 text-cream/50 group-hover:border-lilac/50'}`}>
-                        {isActive && <span className="absolute inset-0 animate-ping rounded-full border border-lilac/50" />}
+                      className={`group relative flex w-full items-center gap-5 rounded-2xl p-3 text-left transition-all duration-200 ${isActive ? 'bg-surface-2' : 'hover:bg-surface'}`}>
+                      <span className={`relative z-10 grid h-10 w-10 shrink-0 place-items-center rounded-full transition-all duration-200 ${isActive ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/50 group-hover:bg-lilac group-hover:text-white'}`}>
+                        {isActive && <span className="absolute inset-0 animate-ping rounded-full bg-lilac/50" />}
                       </span>
                       <span className="flex-1">
                         <span className={`block font-display text-sm font-semibold transition ${isActive ? 'text-white' : 'text-cream/70'}`}>{m.year}</span>
@@ -91,9 +91,9 @@ export function AboutPage() {
                     <span className="text-lilac-300">{active + 1}</span><span>/</span><span>{milestones.length}</span>
                     <span className="ml-auto flex gap-2">
                       <button onClick={() => setActive((a) => Math.max(0, a - 1))} disabled={active === 0}
-                        className="rounded-lg border border-white/10 px-3 py-1.5 text-xs transition hover:border-lilac/40 hover:text-lilac-300 disabled:opacity-30">Prev</button>
+                        className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs text-cream transition hover:bg-lilac hover:text-white disabled:opacity-30">Prev</button>
                       <button onClick={() => setActive((a) => Math.min(milestones.length - 1, a + 1))} disabled={active === milestones.length - 1}
-                        className="rounded-lg border border-white/10 px-3 py-1.5 text-xs transition hover:border-lilac/40 hover:text-lilac-300 disabled:opacity-30">Next</button>
+                        className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs text-cream transition hover:bg-lilac hover:text-white disabled:opacity-30">Next</button>
                     </span>
                   </div>
                 </div>
@@ -113,14 +113,14 @@ export function AboutPage() {
           {leadership.map((s) => (
             <article key={s.id} className="card-glass flex items-start gap-5 p-6">
               {s.photo_url ? (
-                <img src={s.photo_url} alt={s.name} className="h-20 w-20 shrink-0 rounded-2xl border border-lilac/30 object-cover" />
+                <img src={s.photo_url} alt={s.name} className="h-20 w-20 shrink-0 rounded-2xl object-cover" />
               ) : (
-                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl border border-white/10 bg-ink-800">
+                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-surface-2">
                   <UserCircle className="h-10 w-10 text-cream/30" />
                 </div>
               )}
               <div>
-                <span className="chip border-lilac/40 bg-lilac/10 text-lilac-300">{s.role}</span>
+                <span className="chip bg-lilac text-white">{s.role}</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-white">{s.name}</h3>
                 {s.bio && <p className="mt-1.5 text-sm leading-relaxed text-cream/60">{s.bio}</p>}
               </div>

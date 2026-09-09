@@ -74,7 +74,7 @@ export function AnnouncementsPage() {
         <div className="mb-8 mt-8 flex flex-wrap gap-2">
           {FILTERS.map((f) => (
             <button key={f.key} onClick={() => setFilter(f.key)}
-              className={`chip transition-all duration-200 ${filter === f.key ? 'border-lilac bg-lilac/15 text-lilac-300' : 'border-white/10 text-cream/60 hover:border-white/25 hover:text-white'}`}>
+              className={`chip transition-all duration-200 ${filter === f.key ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/60 hover:text-white'}`}>
               {f.label}
             </button>
           ))}
@@ -87,9 +87,9 @@ export function AnnouncementsPage() {
               <h2 className="font-display text-xl font-semibold text-white">{monthLabel}</h2>
               <div className="flex gap-2">
                 <button onClick={() => setCursor(new Date(cursor.getFullYear(), cursor.getMonth() - 1, 1))}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-cream transition hover:border-lilac/40 hover:text-lilac-300"><ChevronLeft className="h-4 w-4" /></button>
+                  className="grid h-9 w-9 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-lilac hover:text-white"><ChevronLeft className="h-4 w-4" /></button>
                 <button onClick={() => setCursor(new Date(cursor.getFullYear(), cursor.getMonth() + 1, 1))}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-cream transition hover:border-lilac/40 hover:text-lilac-300"><ChevronRight className="h-4 w-4" /></button>
+                  className="grid h-9 w-9 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-lilac hover:text-white"><ChevronRight className="h-4 w-4" /></button>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export function AnnouncementsPage() {
                     const isSelected = key === selectedDate;
                     return (
                       <button key={i} onClick={() => setSelectedDate(key)}
-                        className={`group relative flex aspect-square flex-col items-center justify-start rounded-xl border p-1.5 transition-all duration-200 ${isSelected ? 'border-lilac bg-lilac/10' : isToday ? 'border-emerald/50 bg-emerald/10' : 'border-white/10 hover:border-white/20 hover:bg-white/5'}`}>
+                        className={`group relative flex aspect-square flex-col items-center justify-start rounded-xl p-1.5 transition-all duration-200 ${isSelected ? 'bg-lilac text-white' : isToday ? 'bg-emerald text-emerald' : 'bg-surface hover:bg-surface-2'}`}>
                         <span className={`text-sm ${isToday ? 'font-bold text-emerald' : 'text-cream/80'}`}>{date.getDate()}</span>
                         {dayEvents.length > 0 && (
                           <span className="mt-auto mb-1 flex gap-0.5">{dayEvents.slice(0, 3).map((_, idx) => <span key={idx} className="h-1 w-1 rounded-full bg-lilac" />)}</span>
@@ -165,7 +165,7 @@ function CountdownBanner({ event }: { event: import('@/lib/types').SchoolEvent }
         </div>
         <div className="flex gap-3">
           {expired ? (
-            <div className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-cream/60">Happening now</div>
+            <div className="rounded-xl bg-surface-2 px-5 py-3 text-sm text-cream/60">Happening now</div>
           ) : (
             <>
               <CountdownUnit value={days} label="Days" />
@@ -182,9 +182,9 @@ function CountdownBanner({ event }: { event: import('@/lib/types').SchoolEvent }
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="grid place-items-center rounded-xl border border-lilac/30 bg-lilac/5 px-3 py-2 sm:px-4">
-      <span className="font-display text-2xl font-semibold text-lilac-300 tabular-nums">{String(value).padStart(2, '0')}</span>
-      <span className="text-[10px] uppercase tracking-wider text-cream/50">{label}</span>
+    <div className="grid place-items-center rounded-xl bg-lilac px-3 py-2 sm:px-4">
+      <span className="font-display text-2xl font-semibold text-white tabular-nums">{String(value).padStart(2, '0')}</span>
+      <span className="text-[10px] uppercase tracking-wider text-white/70">{label}</span>
     </div>
   );
 }

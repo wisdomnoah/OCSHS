@@ -199,7 +199,7 @@ export function AdminApp({ route }: { route: string }) {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden text-xs text-cream/50 sm:block">{user?.email}</span>
-            <span className="chip border-lilac/40 bg-lilac/10 text-lilac-300">{isSuperAdmin ? 'Super Admin' : 'Editor'}</span>
+            <span className="chip bg-lilac text-white">{isSuperAdmin ? 'Super Admin' : 'Editor'}</span>
           </div>
         </header>
 

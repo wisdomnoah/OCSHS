@@ -182,36 +182,36 @@ export interface MediaItem {
 }
 
 export const PRIORITY_META: Record<Priority, { label: string; color: string }> = {
-  low: { label: 'Info', color: 'text-emerald-300 border-emerald/40 bg-emerald/10' },
-  normal: { label: 'Notice', color: 'text-cream border-white/20 bg-white/5' },
-  high: { label: 'Important', color: 'text-lilac-300 border-lilac/40 bg-lilac/10' },
-  urgent: { label: 'Urgent', color: 'text-red-300 border-red-500/40 bg-red-500/10' },
+  low: { label: 'Info', color: 'bg-emerald text-emerald' },
+  normal: { label: 'Notice', color: 'bg-surface-2 text-cream' },
+  high: { label: 'Important', color: 'bg-lilac text-white' },
+  urgent: { label: 'Urgent', color: 'bg-red-500 text-white' },
 };
 
 export const EVENT_CATEGORY_META: Record<EventCategory, { label: string; color: string }> = {
-  general: { label: 'General', color: 'border-white/20 bg-white/5 text-cream' },
-  academic: { label: 'Academic', color: 'border-lilac/40 bg-lilac/10 text-lilac-300' },
-  arts: { label: 'Arts', color: 'border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-300' },
-  sports: { label: 'Sports', color: 'border-emerald/40 bg-emerald/10 text-emerald-300' },
-  community: { label: 'Community', color: 'border-amber-500/40 bg-amber-500/10 text-amber-300' },
-  exam: { label: 'Exams', color: 'border-red-500/40 bg-red-500/10 text-red-300' },
+  general: { label: 'General', color: 'bg-surface-2 text-cream' },
+  academic: { label: 'Academic', color: 'bg-lilac text-white' },
+  arts: { label: 'Arts', color: 'bg-fuchsia-500 text-white' },
+  sports: { label: 'Sports', color: 'bg-emerald text-emerald' },
+  community: { label: 'Community', color: 'bg-amber-500 text-amber-950' },
+  exam: { label: 'Exams', color: 'bg-red-500 text-white' },
 };
 
 export const AWARD_CATEGORY_META: Record<AwardCategory, { label: string; color: string }> = {
-  academic: { label: 'Academic', color: 'border-lilac/40 bg-lilac/10 text-lilac-300' },
-  arts: { label: 'Arts', color: 'border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-300' },
-  sports: { label: 'Sports', color: 'border-emerald/40 bg-emerald/10 text-emerald-300' },
-  community: { label: 'Community', color: 'border-amber-500/40 bg-amber-500/10 text-amber-300' },
-  innovation: { label: 'Innovation', color: 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300' },
+  academic: { label: 'Academic', color: 'bg-lilac text-white' },
+  arts: { label: 'Arts', color: 'bg-fuchsia-500 text-white' },
+  sports: { label: 'Sports', color: 'bg-emerald text-emerald' },
+  community: { label: 'Community', color: 'bg-amber-500 text-amber-950' },
+  innovation: { label: 'Innovation', color: 'bg-cyan-500 text-cyan-950' },
 };
 
 export const PROGRAM_CATEGORY_META: Record<ProgramCategory, { label: string; color: string }> = {
-  academic: { label: 'Academic', color: 'border-lilac/40 bg-lilac/10 text-lilac-300' },
-  arts: { label: 'Arts', color: 'border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-300' },
-  sports: { label: 'Sports', color: 'border-emerald/40 bg-emerald/10 text-emerald-300' },
-  stem: { label: 'STEM', color: 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300' },
-  service: { label: 'Service', color: 'border-amber-500/40 bg-amber-500/10 text-amber-300' },
-  club: { label: 'Club', color: 'border-white/20 bg-white/5 text-cream' },
+  academic: { label: 'Academic', color: 'bg-lilac text-white' },
+  arts: { label: 'Arts', color: 'bg-fuchsia-500 text-white' },
+  sports: { label: 'Sports', color: 'bg-emerald text-emerald' },
+  stem: { label: 'STEM', color: 'bg-cyan-500 text-cyan-950' },
+  service: { label: 'Service', color: 'bg-amber-500 text-amber-950' },
+  club: { label: 'Club', color: 'bg-surface-2 text-cream' },
 };
 
 export const GALLERY_CATEGORY_META: Record<GalleryCategory, string> = {
@@ -223,11 +223,11 @@ export const GALLERY_CATEGORY_META: Record<GalleryCategory, string> = {
 };
 
 export const STATUS_META: Record<ContentStatus, { label: string; color: string }> = {
-  draft: { label: 'Draft', color: 'text-amber-300 border-amber-500/40 bg-amber-500/10' },
-  published: { label: 'Published', color: 'text-emerald-300 border-emerald/40 bg-emerald/10' },
+  draft: { label: 'Draft', color: 'bg-amber-500 text-amber-950' },
+  published: { label: 'Published', color: 'bg-emerald text-emerald' },
 };
 
 export const ROLE_META: Record<UserRole, { label: string; color: string }> = {
-  super_admin: { label: 'Super Admin', color: 'text-lilac-300 border-lilac/40 bg-lilac/10' },
-  content_editor: { label: 'Content Editor', color: 'text-emerald-300 border-emerald/40 bg-emerald/10' },
+  super_admin: { label: 'Super Admin', color: 'bg-lilac text-white' },
+  content_editor: { label: 'Content Editor', color: 'bg-emerald text-emerald' },
 };

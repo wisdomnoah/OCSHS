@@ -51,7 +51,7 @@ export function AdminGallery() {
                   <StatusBadge status={g.status} />
                 </div>
                 <div className="mt-2 flex items-center justify-between">
-                  <button onClick={() => togglePublish(g)} className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-cream/70 transition hover:border-emerald/50 hover:text-emerald">
+                  <button onClick={() => togglePublish(g)} className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs font-medium text-cream transition hover:bg-emerald hover:text-emerald">
                     {g.status === 'published' ? 'Unpublish' : 'Publish'}
                   </button>
                   <RowActions small onEdit={() => c.setEditing(g)} onDelete={() => c.remove(g.id, 'image')} />
@@ -118,7 +118,7 @@ function GalleryForm({ initial, userId, onClose, onSaved }: {
       <Field label="Image">
         <div className="flex gap-2">
           <input className="input" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} placeholder="https://… or upload" />
-          <label className="inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-xl border border-white/10 px-4 py-3 text-sm text-cream/70 transition hover:border-lilac/50 hover:text-lilac-300">
+          <label className="inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-surface-2 px-4 py-3 text-sm text-cream transition hover:bg-lilac hover:text-white">
             {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
             Upload
             <input type="file" accept="image/*" className="hidden" onChange={handleUpload} disabled={uploading} />

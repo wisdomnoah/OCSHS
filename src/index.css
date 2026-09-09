@@ -60,19 +60,15 @@
 
 @layer components {
   .glass {
-    background-color: rgb(var(--glass-bg) / var(--glass-alpha));
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgb(var(--glass-border) / var(--glass-border-alpha));
+    background-color: rgb(var(--surface-rgb));
+    border: 1px solid rgb(var(--glass-border) / 0.06);
   }
   .glass-strong {
-    background-color: rgb(var(--surface-rgb) / 0.78);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgb(var(--glass-border) / var(--glass-border-alpha));
+    background-color: rgb(var(--surface-2-rgb));
+    border: 1px solid rgb(var(--glass-border) / 0.06);
   }
   .card-glass { @apply glass rounded-2xl transition-all duration-200; }
-  .card-glass:hover { border-color: rgb(var(--glass-border) / 0.2); }
+  .card-glass:hover { background-color: rgb(var(--surface-2-rgb)); }
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.98];
@@ -83,23 +79,21 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.98];
-    border: 1px solid rgb(var(--accent3-rgb) / 0.5);
-    background-color: rgb(var(--accent3-rgb) / 0.10);
-    color: rgb(var(--accent3-rgb));
+    background-color: rgb(var(--accent3-rgb));
+    color: rgb(var(--accent3-deep-rgb));
   }
   .btn-secondary:hover {
-    border-color: rgb(var(--accent3-rgb));
-    background-color: rgb(var(--accent3-rgb) / 0.18);
+    filter: brightness(1.1);
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 active:scale-[0.98];
-    border: 1px solid rgb(var(--glass-border) / 0.15);
+    background-color: rgb(var(--surface-2-rgb));
     color: rgb(var(--body-rgb));
   }
-  .btn-ghost:hover { border-color: rgb(var(--glass-border) / 0.3); background-color: rgb(var(--glass-bg) / 0.05); }
+  .btn-ghost:hover { background-color: rgb(var(--surface-3-rgb)); color: rgb(var(--heading-rgb)); }
 
-  .chip { @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium; background-color: rgb(var(--surface-2-rgb)); color: rgb(var(--body-rgb)); }
 
   .input {
     @apply w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none;

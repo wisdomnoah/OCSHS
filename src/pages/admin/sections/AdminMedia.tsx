@@ -79,7 +79,7 @@ export function AdminMedia() {
                 <img src={item.publicUrl} alt={item.name} className="h-full w-full object-cover" />
                 <button
                   onClick={() => { navigator.clipboard?.writeText(item.publicUrl); show('Image URL copied to clipboard.'); }}
-                  className="absolute bottom-2 right-2 rounded-lg border border-white/20 bg-ink-900/80 px-2 py-1 text-[10px] text-cream/80 transition hover:text-lilac-300"
+                  className="absolute bottom-2 right-2 rounded-lg bg-surface-2/90 px-2 py-1 text-[10px] text-cream transition hover:bg-lilac hover:text-white"
                 >
                   Copy URL
                 </button>
@@ -89,7 +89,7 @@ export function AdminMedia() {
                   <p className="truncate text-xs font-medium text-white">{item.name}</p>
                   <p className="text-[10px] text-cream/40">{fmtSize(item.metadata?.size ?? 0)}</p>
                 </div>
-                <button onClick={() => handleDelete(item)} className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/10 text-cream/70 transition hover:border-red-400/50 hover:text-red-300">
+                <button onClick={() => handleDelete(item)} className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-surface-2 text-cream transition hover:bg-red-500 hover:text-white">
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>
               </div>

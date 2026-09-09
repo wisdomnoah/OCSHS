@@ -151,9 +151,9 @@ export function HomePage() {
                 const d = new Date(e.event_date);
                 return (
                   <button key={e.id} onClick={() => navigate('/announcements')} className="card-glass flex w-full items-center gap-4 p-4 text-left">
-                    <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-lilac/30 bg-lilac/5">
-                      <span className="font-display text-lg font-semibold text-lilac-300">{d.getDate()}</span>
-                      <span className="text-[10px] uppercase text-cream/50">{d.toLocaleString('en', { month: 'short' })}</span>
+                    <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-lilac">
+                      <span className="font-display text-lg font-semibold text-white">{d.getDate()}</span>
+                      <span className="text-[10px] uppercase text-white/70">{d.toLocaleString('en', { month: 'short' })}</span>
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-medium text-white">{e.title}</p>
@@ -200,7 +200,7 @@ function FloatingAnnouncement({ className, icon, title, subtitle }: { className?
   return (
     <div className={`absolute z-10 ${className}`}>
       <div className="glass-strong flex items-center gap-3 rounded-2xl px-4 py-3">
-        <span className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 bg-white/5">{icon}</span>
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-surface-2">{icon}</span>
         <div>
           <p className="text-sm font-semibold text-white">{title}</p>
           <p className="text-xs text-cream/60">{subtitle}</p>

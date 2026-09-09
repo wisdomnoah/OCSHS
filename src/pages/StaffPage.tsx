@@ -40,7 +40,7 @@ export function StaffPage() {
           <div className="flex flex-wrap gap-2">
             {departments.map((d) => (
               <button key={d} onClick={() => setDept(d)}
-                className={`chip transition-all duration-200 ${dept === d ? 'border-lilac bg-lilac/15 text-lilac-300' : 'border-white/10 text-cream/60 hover:border-white/25 hover:text-white'}`}>
+                className={`chip transition-all duration-200 ${dept === d ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/60 hover:text-white'}`}>
                 {d === 'all' ? 'All Departments' : d}
               </button>
             ))}
@@ -58,7 +58,7 @@ export function StaffPage() {
                     <div className="grid h-full w-full place-items-center bg-ink-800 text-cream/30"><Users className="h-10 w-10" /></div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent" />
-                  <span className="absolute left-3 top-3 chip border-lilac/40 bg-lilac/10 text-lilac-300">{s.department}</span>
+                  <span className="absolute left-3 top-3 chip bg-lilac text-white">{s.department}</span>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-base font-semibold text-white">{s.name}</h3>

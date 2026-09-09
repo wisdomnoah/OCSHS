@@ -45,7 +45,7 @@ export function AdminStaff() {
                 <p className="text-xs text-cream/50">{s.role} · {s.department}{s.email ? ` · ${s.email}` : ''}</p>
               </div>
               <div className="flex shrink-0 gap-1.5">
-                <button onClick={() => togglePublish(s)} className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-medium text-cream/70 transition hover:border-emerald/50 hover:text-emerald">
+                <button onClick={() => togglePublish(s)} className="rounded-lg bg-surface-2 px-3 py-1.5 text-xs font-medium text-cream transition hover:bg-emerald hover:text-emerald">
                   {s.status === 'published' ? 'Unpublish' : 'Publish'}
                 </button>
                 <RowActions onEdit={() => c.setEditing(s)} onDelete={() => c.remove(s.id, 'staff member')} />
@@ -112,7 +112,7 @@ function StaffForm({ initial, userId, onClose, onSaved }: {
       <Field label="Profile Photo">
         <div className="flex gap-2">
           <input className="input" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} placeholder="https://… or upload" />
-          <label className="inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-xl border border-white/10 px-4 py-3 text-sm text-cream/70 transition hover:border-lilac/50 hover:text-lilac-300">
+          <label className="inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-surface-2 px-4 py-3 text-sm text-cream transition hover:bg-lilac hover:text-white">
             {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
             Upload
             <input type="file" accept="image/*" className="hidden" onChange={handleUpload} disabled={uploading} />

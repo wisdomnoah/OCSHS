@@ -31,7 +31,7 @@ export function ProgramsPage() {
         <div className="mb-8 flex flex-wrap gap-2">
           {FILTERS.map((f) => (
             <button key={f.key} onClick={() => setFilter(f.key)}
-              className={`chip transition-all duration-200 ${filter === f.key ? 'border-lilac bg-lilac/15 text-lilac-300' : 'border-white/10 text-cream/60 hover:border-white/25 hover:text-white'}`}>
+              className={`chip transition-all duration-200 ${filter === f.key ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/60 hover:text-white'}`}>
               {f.label}
             </button>
           ))}
@@ -69,7 +69,7 @@ export function ProgramsPage() {
 
       <Modal open={selected !== null} onClose={() => setSelected(null)} maxWidth="max-w-xl">
         {selected && (
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-ink-900">
+          <div className="overflow-hidden rounded-2xl bg-surface">
             {selected.image_url && (
               <div className="relative aspect-video overflow-hidden">
                 <img src={selected.image_url} alt={selected.name} className="h-full w-full object-cover" />

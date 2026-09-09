@@ -42,7 +42,7 @@ export function GalleryPage() {
         <div className="mb-8 flex flex-wrap gap-2">
           {FILTERS.map((f) => (
             <button key={f.key} onClick={() => setFilter(f.key)}
-              className={`chip transition-all duration-200 ${filter === f.key ? 'border-lilac bg-lilac/15 text-lilac-300' : 'border-white/10 text-cream/60 hover:border-white/25 hover:text-white'}`}>
+              className={`chip transition-all duration-200 ${filter === f.key ? 'bg-lilac text-white' : 'bg-surface-2 text-cream/60 hover:text-white'}`}>
               {f.label}
             </button>
           ))}
@@ -51,15 +51,15 @@ export function GalleryPage() {
         <StateWrapper loading={loading} error={error} empty={filtered.length === 0 ? <EmptyState message="No images in this category yet." /> : undefined}>
           <div className="grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] sm:grid-cols-3 lg:grid-cols-4">
             {filtered.map((item, i) => (
-              <button key={item.id} onClick={() => setModalIdx(i)} className={`group relative overflow-hidden rounded-2xl border border-white/10 ${spanFor(i, filtered.length)}`}>
+              <button key={item.id} onClick={() => setModalIdx(i)} className={`group relative overflow-hidden rounded-2xl ${spanFor(i, filtered.length)}`}>
                 <img src={item.image_url} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-95" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-left">
-                  <span className="chip border-lilac/30 bg-lilac/10 text-lilac-300">{GALLERY_CATEGORY_META[item.category]}</span>
+                  <span className="chip bg-lilac text-white">{GALLERY_CATEGORY_META[item.category]}</span>
                   <p className="mt-2 font-display text-sm font-medium text-white sm:text-base">{item.title}</p>
                 </div>
-                <span className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-ink-950/60 opacity-0 transition group-hover:opacity-100">
+                <span className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-surface-2/90 opacity-0 transition group-hover:opacity-100">
                   <ZoomIn className="h-4 w-4 text-white" />
                 </span>
               </button>
@@ -70,17 +70,17 @@ export function GalleryPage() {
 
       <Modal open={modalIdx !== null} onClose={() => setModalIdx(null)} maxWidth="max-w-4xl">
         {modalItem && (
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-ink-900">
+          <div className="overflow-hidden rounded-2xl bg-surface">
             <div className="relative">
               <img src={modalItem.image_url} alt={modalItem.title} className="max-h-[70vh] w-full object-contain bg-ink-950" />
               <button onClick={() => setModalIdx((p) => (p === null ? null : Math.max(0, p - 1)))} disabled={modalIdx === 0}
-                className="absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-ink-950/70 text-white transition hover:border-lilac/50 disabled:opacity-30">‹</button>
+                className="absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-surface-2/90 text-white transition hover:bg-lilac disabled:opacity-30">‹</button>
               <button onClick={() => setModalIdx((p) => (p === null || p >= filtered.length - 1 ? null : p + 1))} disabled={modalIdx === filtered.length - 1}
-                className="absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-ink-950/70 text-white transition hover:border-lilac/50 disabled:opacity-30">›</button>
+                className="absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-surface-2/90 text-white transition hover:bg-lilac disabled:opacity-30">›</button>
             </div>
             <div className="flex items-start justify-between gap-4 p-5">
               <div>
-                <span className="chip border-lilac/30 bg-lilac/10 text-lilac-300">{GALLERY_CATEGORY_META[modalItem.category]}</span>
+                <span className="chip bg-lilac text-white">{GALLERY_CATEGORY_META[modalItem.category]}</span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-white">{modalItem.title}</h3>
                 {modalItem.description && <p className="mt-1 text-sm text-cream/65">{modalItem.description}</p>}
               </div>
